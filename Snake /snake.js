@@ -1,9 +1,9 @@
 export const snakeSpeed = 2 //how many times the snake moves per sec
 
-function update() {
-
+export function update() {
+    console.log('updateSnake')
 }
 
-function render() {
-    
+export function render() {
+    console.log('renderSnake')
 }
