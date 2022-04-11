@@ -14,10 +14,10 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            background-color: brown;
+            background-color: black;
         }
 
-        #gameboard {
+        #game-board {
             background-color: grey;
             height: 100vmin;
             width: 100vmin;
@@ -27,22 +27,20 @@
         }
 
         .snake {
-            background-color: olive;
+            background-color: hsl(76, 62%, 31%);
             border: 25vmin;
             border: 25vmin solid black;
         }
 
         .food {
-            background-color: red;
+            background-color: hsl(0, 62%, 31%);
             border: 25vmin solid black;
         }
 
     </style>
     <script src="game.js" defer type="module"></script>
-    <!-- defer it loads afer the body -->
-    <!-- module so we can use import/export for the project -->
 </head>
 <body>
-    <div id="gameboard"></div>
+    <div id="game-board"></div>
 </body>
 </html>

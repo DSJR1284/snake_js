@@ -1,9 +1,24 @@
-export const snakeSpeed = 2 //how many times the snake moves per sec
+export const snakeSpeed = 2 
+const snakeBody = [
+    {x: 10, y: 11},
+    {x: 11, y: 11},
+    {x: 12, y: 11}
+] 
 
 export function update() {
-    console.log('updateSnake')
+    for (let i = snakeBody.length -2; i >= 0; i--) {
+        snakeBody[i + 1 ] = { ... snakeBody[i]}
+    }
+    snakeBody[0].x += 1
+    snakeBody[0].y += 1
 }
 
-export function render() {
-    console.log('renderSnake')
+export function render(gameBoard) {
+    snakeBody.forEach(segment => {
+    const snakeElement = document.createElement('div')
+    snakeElement.style.gridRowStart = segment.y 
+    snakeElement.style.gridColumnStart = segment.x
+    snakeElement.classList.add('snake')
+    gameBoard.appendChild(snakeElement) 
+    })
 }
