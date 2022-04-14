@@ -19,7 +19,7 @@ function update() {
 }
 
 function render() {
-    gameBoard.innerHTML = ' '
+    gameBoard.innerHTML = ''
     renderSnake(gameBoard)
 }
 
