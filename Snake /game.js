@@ -3,6 +3,7 @@ import { update as updateSnake, render as renderSnake, snakeSpeed } from './snak
 import { update as updateFood, render as renderFood } from './food.js'
 
 let lastRenderTime = 0 
+let endgame = false
 const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
@@ -19,6 +20,7 @@ window.requestAnimationFrame(main)
 function update() {
     updateSnake()
     updateFood()
+    endGame()
 }
 
 function render() {
@@ -26,4 +28,8 @@ function render() {
     renderSnake(gameBoard)
     renderFood(gameBoard)
 }
+
+function endGame( {
+    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+})
 
