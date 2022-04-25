@@ -42,5 +42,6 @@ function addSegments() {
     for (let i = 0; i < newSegment; i++) {
         snakeBody.push({ ... snakeBody[snakeBody.length - 1]})
     }
+    newSegment = 0
 }
 

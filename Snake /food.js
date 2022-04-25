@@ -17,3 +17,11 @@ export function render(gameBoard) {
     foodElement.classList.add('food')
     gameBoard.appendChild(foodElement)    
 }
+
+function getRandomFood() {
+    let newFood
+    while ( newFood == null || onSnake(newFood)) {
+        newFood = randomGridPosition()
+    }
+    return newFood
+}
