@@ -1,14 +1,19 @@
-import { update as updateSnake, render as renderSnake, snakeSpeed } from './snake.js'
+import { update as updateSnake, render as renderSnake, snakeSpeed, getSnakeHead, snakeIntersection } from './snake.js'
 
 import { update as updateFood, render as renderFood } from './food.js'
 
+import { outsideGrid } from './grid.js'
+
 let lastRenderTime = 0 
-let endgame = false
+let endGame = false
 const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
     if (endGame) {
-        return alert('You Lose')
+        if (confirm('You Lose. Press ok to try again.')) {
+            window.location = '/'
+        }
+        return
     }
 
     window.requestAnimationFrame(main)
